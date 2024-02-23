@@ -2,7 +2,7 @@
 
 ## Getting started
 - [x] Init a new Nuxt Content project
-- [] Implementing a new look for the blog (using a new template)
+- [x] Implementing a new look for the blog (using template Future Imperfect)
 
 ## Features
 - [] Home page
