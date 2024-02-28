@@ -12,6 +12,7 @@
     "nuxt": "^3.10.3"
   },
   "devDependencies": {
+    "primeflex": "^3.3.1",
     "sass": "^1.71.1"
   }
 }
