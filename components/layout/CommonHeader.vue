@@ -1,7 +1,7 @@
 <template>
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html">Future Imperfect</a></h1>
+        <h1><NuxtLink to="/">Hikari's AniBlog</NuxtLink></h1>
         <nav class="links">
             <ul>
                 <li><a href="#">Lorem</a></li>

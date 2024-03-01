@@ -6,7 +6,8 @@
 
 ## Features
 - [ ] Home page
-    - [ ] List of posts
+    - [x] List of posts
+    - [ ] Pagination
     - [ ] Links to MAL + Youtube channel
     - [ ] Anime watching schedule
 - [ ] Post page

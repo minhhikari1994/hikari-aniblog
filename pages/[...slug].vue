@@ -22,7 +22,7 @@
             <a href="#" class="author"><span class="name">Minh Hikari</span><img src="/images/avatar.jpg" alt="" /></a>
           </div>
         </header>
-        <!-- <span class="image featured"><img src="/images/pic01.jpg" alt="" /></span> -->
+        <span class="image featured"><img :src="doc.feature_image" alt="" /></span>
         <ContentRenderer :value="doc" />
       </article>
     </ContentDoc>
