@@ -59,8 +59,8 @@
 
             <!-- Pagination -->
             <ul class="actions pagination">
-                <li><NuxtLink :to="`page/${nextPage.toString()}`" class="button large previous" :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink></li>
-                <li><NuxtLink :to="`page/${nextPage.toString()}`" class="button large next" :class="{ disabled: currentPage*pageSize >= totalNumberOfPosts }">Next Page</NuxtLink></li>
+                <li><NuxtLink :to="previousPage.toString()" class="button large previous" :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink></li>
+                <li><NuxtLink :to="nextPage.toString()" class="button large next" :class="{ disabled: currentPage*pageSize >= totalNumberOfPosts }">Next Page</NuxtLink></li>
             </ul>
 
         </div>
@@ -229,6 +229,7 @@ const postList = await useAsyncData('home', () =>
         .limit(pageSize)
         .find()
 );
+
 
 
 </script>

@@ -7,13 +7,15 @@
 ## Features
 - [ ] Home page
     - [x] List of posts
-    - [ ] Pagination
+    - [x] Pagination
     - [ ] Links to MAL + Youtube channel
     - [ ] Anime watching schedule
 - [ ] Post page
     - [x] Layout
     - [x] Custom components for anime entry
     - [ ] Custom components for headers
+    - [ ] Custom components for anime entry with score
+- [ ] Search (by title) feature
 - [ ] List posts that have a specific tags
 - [ ] Internationalization + language switch (EN / VN)
 - [ ] Internal utils for helping with posts

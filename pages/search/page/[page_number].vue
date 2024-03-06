@@ -55,12 +55,14 @@
         <div id="main">
 
             <!-- Post -->
+            <h2>All post with search term: {{ searchTerm }}</h2>
+
             <HomePostEntry v-for="post in postList.data.value" :post="post" :key="post.id" />
 
             <!-- Pagination -->
             <ul class="actions pagination">
-                <li><NuxtLink :to="`page/${nextPage.toString()}`" class="button large previous" :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink></li>
-                <li><NuxtLink :to="`page/${nextPage.toString()}`" class="button large next" :class="{ disabled: currentPage*pageSize >= totalNumberOfPosts }">Next Page</NuxtLink></li>
+                <li><NuxtLink :to="previousPage.toString()" class="button large previous" :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink></li>
+                <li><NuxtLink :to="nextPage.toString()" class="button large next" :class="{ disabled: currentPage*pageSize >= totalNumberOfPosts }">Next Page</NuxtLink></li>
             </ul>
 
         </div>
@@ -215,20 +217,25 @@
 <script setup>
 
 const route = useRoute();
+const searchTerm = route.query.q
 const currentPage = Number(route.params.page_number || '1')
 const nextPage = currentPage + 1
 const previousPage = currentPage - 1
 const pageSize = 5
 
-const totalNumberOfPosts = await queryContent('/').count()
+const totalNumberOfPosts = await queryContent('/').where({ title : { $regex: `/.*${ searchTerm }.*/` } }).count()
 
-const postList = await useAsyncData('home', () =>
+const postList = await useAsyncData('search', () =>
     queryContent('/')
+        .where({ title : { $regex: `/.*${ searchTerm }.*/` } })
         .sort({ published_date: -1 })
         .skip((currentPage - 1) * pageSize)
         .limit(pageSize)
         .find()
 );
+
+console.log(postList)
+
 
 
 </script>
