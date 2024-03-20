@@ -28,3 +28,9 @@
     </ContentDoc>
   </div>
 </template>
+
+<script>
+definePageMeta({
+  layout: 'singlepost'
+})
+</script>
