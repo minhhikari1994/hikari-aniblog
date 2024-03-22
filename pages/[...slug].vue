@@ -1,13 +1,5 @@
-<!-- <template>
-  <main>
-    <ContentDoc />
-  </main>
-</template> -->
-
 <template>
-  <!-- Main -->
   <div id="main">
-    <!-- Post -->
     <ContentDoc v-slot="{ doc }">
       <article class="post">
         <header>

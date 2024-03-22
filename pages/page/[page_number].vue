@@ -83,9 +83,9 @@ const nextPage = currentPage + 1
 const previousPage = currentPage - 1
 const pageSize = 5
 
-const totalNumberOfPosts = await queryContent('/').count()
+const { data: totalNumberOfPosts} = await useAsyncData('home_count', () =>queryContent('/').count())
 
-const postList = await useAsyncData('home', () =>
+const { data: postList } = await useAsyncData('home', () =>
     queryContent('/')
         .sort({ published_date: -1 })
         .skip((currentPage - 1) * pageSize)

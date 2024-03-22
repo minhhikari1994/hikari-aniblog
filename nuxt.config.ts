@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   css: [
-    '~/assets/css/main.css',
     'primeflex/primeflex.css',
+    '~/assets/css/main.css',
   ],
   app: {
     head: {

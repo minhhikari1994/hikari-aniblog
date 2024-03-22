@@ -1,80 +1,25 @@
 <template>
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <!-- Main -->
+    <div id="main">
 
-        <!-- Menu -->
-        <section id="menu">
+        <!-- Post -->
+        <h2>All posts with tag: {{ $route.params.tag_name }}</h2>
 
-            <!-- Search -->
-            <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
-            </section>
+        <HomePostEntry v-for="post in postList" :post="post" :key="post.id" />
 
-            <!-- Links -->
-            <section>
-                <ul class="links">
-                    <li>
-                        <a href="#">
-                            <h3>Lorem ipsum</h3>
-                            <p>Feugiat tempus veroeros dolor</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Dolor sit amet</h3>
-                            <p>Sed vitae justo condimentum</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Feugiat veroeros</h3>
-                            <p>Phasellus sed ultricies mi congue</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Etiam sed consequat</h3>
-                            <p>Porta lectus amet ultricies</p>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Actions -->
-            <section>
-                <ul class="actions stacked">
-                    <li><a href="#" class="button large fit">Log In</a></li>
-                </ul>
-            </section>
-
-        </section>
-
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Post -->
-            <h2>All posts with tag: {{ $route.params.tag_name }}</h2>
-
-            <HomePostEntry v-for="post in postList.data.value" :post="post" :key="post.id" />
-
-            <!-- Pagination -->
-            <ul class="actions pagination">
-                <li><NuxtLink :to="previousPage.toString()" class="button large previous" :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink></li>
-                <li><NuxtLink :to="nextPage.toString()" class="button large next" :class="{ disabled: currentPage*pageSize >= totalNumberOfPosts }">Next Page</NuxtLink></li>
-            </ul>
-
-        </div>
+        <!-- Pagination -->
+        <ul class="actions pagination">
+            <li>
+                <NuxtLink :to="previousPage.toString()" class="button large previous"
+                    :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink>
+            </li>
+            <li>
+                <NuxtLink :to="nextPage.toString()" class="button large next"
+                    :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">Next Page</NuxtLink>
+            </li>
+        </ul>
 
     </div>
-
-    <!-- Scripts -->
-    <!-- <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script> -->
 </template>
 
 
@@ -86,11 +31,13 @@ const nextPage = currentPage + 1
 const previousPage = currentPage - 1
 const pageSize = 5
 
-const totalNumberOfPosts = await queryContent('/').where({ tags : { $contains: useRoute().params.tag_name } }).count()
+const { data: totalNumberOfPosts} = await useAsyncData('tags_count', () =>
+    queryContent('/').where({ tags: { $contains: useRoute().params.tag_name } }).count()
+)
 
-const postList = await useAsyncData('home', () =>
+const { data: postList } = await useAsyncData('tags', () =>
     queryContent('/')
-        .where({ tags : { $contains: useRoute().params.tag_name } })
+        .where({ tags: { $contains: useRoute().params.tag_name } })
         .sort({ published_date: -1 })
         .skip((currentPage - 1) * pageSize)
         .limit(pageSize)

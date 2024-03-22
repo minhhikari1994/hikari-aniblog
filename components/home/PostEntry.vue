@@ -17,9 +17,11 @@
         <NuxtLink :to="post._path" class="image featured">
             <img :src="post.feature_image" :alt="post.title" />
         </NuxtLink>
-        <p>
+        
+        <div class="mb-5">
             <ContentRendererMarkdown :value="getFirstParagraph(post)" />
-        </p>
+        </div>
+        
         <footer>
             <ul class="actions">
                 <li>
