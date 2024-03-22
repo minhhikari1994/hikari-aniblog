@@ -2,7 +2,7 @@
     <!-- Wrapper -->
     <div id="wrapper">
         <LayoutCommonHeader></LayoutCommonHeader>
-        <LayoutRightSideMenu></LayoutRightSideMenu>
+        <!-- <LayoutRightSideMenu></LayoutRightSideMenu> -->
         <slot />
         <LayoutLeftSideBar></LayoutLeftSideBar>
     </div>
