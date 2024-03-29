@@ -9,10 +9,10 @@
                     <h2>{{ name }}</h2>
                 </div>
 
-                <div><b>Xưởng phim <i>(Studios)</i></b></div>
+                <div><b>{{ $t('studios') }}</b></div>
                 <div>{{ studios }}</div>
 
-                <div><b>Thể loại <i>(Genres)</i></b></div>
+                <div><b>{{ $t('genres') }}</b></div>
                 <div>{{ genres }}</div>
             </div>
         </div>

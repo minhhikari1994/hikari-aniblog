@@ -4,11 +4,11 @@
         <ul class="actions pagination">
             <li>
                 <NuxtLink :to="`page/${nextPage.toString()}`" class="button large previous"
-                    :class="{ disabled: previousPage <= 0 }">Previous Page</NuxtLink>
+                    :class="{ disabled: previousPage <= 0 }">{{ $t("previousPage") }}</NuxtLink>
             </li>
             <li>
                 <NuxtLink :to="`page/${nextPage.toString()}`" class="button large next"
-                    :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">Next Page</NuxtLink>
+                    :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">{{ $t("nextPage") }}</NuxtLink>
             </li>
         </ul>
     </div>

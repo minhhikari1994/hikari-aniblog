@@ -5,7 +5,7 @@
             <a href="#" class="logo"><img src="/images/logo.jpg" alt="" /></a>
             <header>
                 <h2>Hikari's AniBlog</h2>
-                <p>Just a blog for my anime hobby</p>
+                <p>{{ $t('pageSubtitle') }}</p>
             </header>
         </section>
 

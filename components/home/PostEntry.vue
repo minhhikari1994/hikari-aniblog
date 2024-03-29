@@ -25,7 +25,7 @@
         <footer>
             <ul class="actions">
                 <li>
-                    <NuxtLink :to="post._path" class="button large">Continue Reading</NuxtLink>
+                    <NuxtLink :to="post._path" class="button large">{{ $t('continueReading') }}</NuxtLink>
                 </li>
             </ul>
             <ul class="stats">

@@ -1,11 +1,11 @@
 <template>
     <section class="blurb" id="anime-watching-plan">
-            <h2>Anime watching plan</h2>
+            <h2>{{ $t('animeWatchSchedule') }}</h2>
             <UAccordion :items="animeSchedule">
                 <template #default="{ item, index, open }">
                     <UButton color="gray" variant="ghost" class="border-b border-gray-200 dark:border-gray-700 h-auto">
                         
-                        <span class="truncate">{{ item.label }}</span>
+                        <span class="truncate">{{ $t(item.weekDay) }}</span>
 
                         <template #trailing>
                             <UIcon name="i-heroicons-chevron-right-20-solid"
@@ -30,43 +30,43 @@
 
 <script setup>
 const animeSchedule = [{
-    label: 'Monday',
+    weekDay: 'monday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 }, {
-    label: 'Tuesday',
+    weekDay: 'tuesday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 }, {
-    label: 'Wednesday',
+    weekDay: 'wednesday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 },{
-    label: 'Thursday',
+    weekDay: 'thursday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 },{
-    label: 'Friday',
+    weekDay: 'friday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 },{
-    label: 'Saturday',
+    weekDay: 'saturday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
     ]
 },{
-    label: 'Sunday',
+    weekDay: 'sunday',
     animeList: [
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },
         { name: 'Sousou no Frieren', malId: 52991, episode: '28/28', status: 'Finished' },

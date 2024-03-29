@@ -9,16 +9,16 @@
                     <h2>{{ name }}</h2>
                 </div>
 
-                <div><b>Xưởng phim <i>(Studios)</i></b></div>
+                <div><b>{{ $t('studios') }}</b></div>
                 <div>{{ studios }}</div>
 
-                <div><b>Thể loại <i>(Genres)</i></b></div>
+                <div><b>{{ $t('genres') }}</b></div>
                 <div>{{ genres }}</div>
 
-                <div><b>Thời lượng <i>(Duration)</i></b></div>
+                <div><b>{{ $t('duration') }}</b></div>
                 <div>{{ duration }}</div>
 
-                <div><b>Ngày ra rạp <i>(Theatrical release date)</i></b></div>
+                <div><b>{{ $t('theatricalReleaseDate') }}</b></div>
                 <div>{{ theatrical_release }}</div>
             </div>
         </div>
