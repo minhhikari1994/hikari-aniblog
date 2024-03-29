@@ -2,6 +2,8 @@
     "pageSubtitle": "Blog dành riêng cho sở thích Anime",
 
     "search": "Tìm kiếm",
+    "allPostsWithSearchTerm": "Tất cả bài viết với tiêu đề có chứa:",
+    "allPostsWithTag": "Tất cả các bài viết có tag:",
     "continueReading": "Đọc tiếp",
     "previousPage": "Trang trước",
     "nextPage": "Trang sau",

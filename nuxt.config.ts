@@ -1,3 +1,5 @@
+import {resolve} from 'path'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -19,5 +21,19 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: './i18n/i18n.config.ts'
+  },
+  content: {
+    sources: {
+      content: {
+        driver: 'fs',
+        prefix: '/en',
+        base: resolve(__dirname, 'content')
+      },
+      vi: {
+        prefix: '/vi',
+        driver: 'fs',
+        base: resolve(__dirname, 'content-vi')
+      }
+    }
   }
 })

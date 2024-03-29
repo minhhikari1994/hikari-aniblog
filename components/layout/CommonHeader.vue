@@ -22,10 +22,9 @@
                     </form>
                 </li>
                 <li class="">
-                    <UButton size="xs" class="h-full w-full text-black" icon="i-heroicons-pencil-square" @click="switchLanguage()">
-                        <span v-if="locale === 'vi'">Chuyen qua Tieng Anh</span>
-                        <span v-if="locale === 'en'">Switch to Vietnamese</span>
-                    </UButton>
+                    <button class="h-full" @click="switchLanguage()">
+                        {{ locale === 'vi' ? 'Tiếng Việt' : 'English'  }}
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -35,6 +34,7 @@
 <script setup>
 const { locale, setLocale } = useI18n()
 const searchTerm = ref("")
+const route = useRoute()
 
 const triggerSearch = () => {
     if (searchTerm.value) {
@@ -42,9 +42,27 @@ const triggerSearch = () => {
     }
 }
 
+const navigateToOtherLanguagePost = async() => {
+    const { data : currentPage } = await useAsyncData('post', () => queryContent(route.fullPath).findOne())
+    const postId = currentPage.value.id
+    const { data : destinationPage } = await useAsyncData('post-in-other-language', () => queryContent(`/${locale.value}`)
+        .where({ id: { $eq: postId } })
+        .findOne()
+    )
+    console.log(destinationPage)
+    navigateTo(destinationPage.value._path)
+}
+
 const switchLanguage = () => {
+    console.log('this is the current route', route)
     const switchToLang = locale.value === 'vi' ? 'en' : 'vi'
     setLocale(switchToLang)
+    if (route.name !== "slug") {
+        reloadNuxtApp({force: true})
+    } else {
+        navigateToOtherLanguagePost()
+    }
+    // reloadNuxtApp({force: true})
 }
 
 </script>

@@ -2,6 +2,8 @@
     "pageSubtitle": "Just a blog for my anime hobby",
     
     "search": "Search",
+    "allPostsWithSearchTerm": "All posts with search term:",
+    "allPostsWithTag": "All posts with tag:",
     "continueReading": "Continue reading",
     "previousPage": "Previous page",
     "nextPage": "Next page",

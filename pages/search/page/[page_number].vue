@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-        <h2>All post with search term: {{ searchTerm }}</h2>
+        <h2>{{ $t('allPostsWithSearchTerm') }} {{ searchTerm }}</h2>
         <HomePostEntry v-for="post in postList" :post="post" :key="post.id" />
         <ul class="actions pagination">
             <li>
@@ -17,7 +17,7 @@
 
 
 <script setup>
-
+const { locale } = useI18n();
 const route = useRoute();
 const searchTerm = route.query.q
 const currentPage = Number(route.params.page_number || '1')
@@ -26,11 +26,11 @@ const previousPage = currentPage - 1
 const pageSize = 2
 
 const { data: totalNumberOfPosts } = await useAsyncData('search_count', () => 
-    queryContent('/').where({ title: { $regex: `/.*${searchTerm}.*/i` } }).count()
+    queryContent(`/${locale.value}`).where({ title: { $regex: `/.*${searchTerm}.*/i` } }).count()
 )
 
 const { data: postList } = await useAsyncData('search', () =>
-    queryContent('/')
+    queryContent(`/${locale.value}`)
         .where({ title: { $regex: `/.*${searchTerm}.*/i` } })
         .sort({ published_date: -1 })
         .skip((currentPage - 1) * pageSize)
