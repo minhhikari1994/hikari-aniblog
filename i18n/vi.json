@@ -19,5 +19,8 @@
     "studios": "Xưởng phim",
     "genres": "Thể loại",
     "duration": "Thời lượng",
-    "theatricalReleaseDate": "Ngày ra rạp"
+    "theatricalReleaseDate": "Ngày ra rạp",
+    "composedBy": "Sáng tác",
+    "singer": "Giọng ca",
+    "anime": "Anime"
 }

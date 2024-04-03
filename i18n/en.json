@@ -19,5 +19,8 @@
     "studios": "Studios",
     "genres": "Genres",
     "duration": "Duration",
-    "theatricalReleaseDate": "Theatrical release date"
+    "theatricalReleaseDate": "Theatrical release date",
+    "composedBy": "Composed by",
+    "singer": "Singer",
+    "anime": "Anime"
 }
