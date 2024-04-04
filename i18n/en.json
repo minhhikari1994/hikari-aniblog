@@ -1,6 +1,11 @@
 {
     "pageSubtitle": "Just a blog for my anime hobby",
-    
+    "winter": "Winter",
+    "spring": "Spring",
+    "summer": "Summer",
+    "fall": "Fall",
+    "autumn": "Fall",
+
     "search": "Search",
     "allPostsWithSearchTerm": "All posts with search term:",
     "allPostsWithTag": "All posts with tag:",
@@ -22,5 +27,10 @@
     "theatricalReleaseDate": "Theatrical release date",
     "composedBy": "Composed by",
     "singer": "Singer",
-    "anime": "Anime"
+    "anime": "Anime",
+    "rating_title": "Rating",
+    "mal_score_title": "MyAnimeList Score",
+    "mal_rating_title": "ratings",
+    "personal_score_title": "Personal Score",
+    "personal_aots": "Personal Anime of the Season - {season_name_key} {season_year}"
 }

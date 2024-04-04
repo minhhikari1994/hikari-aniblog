@@ -20,11 +20,29 @@
 
                 <div><b>{{ $t('theatricalReleaseDate') }}</b></div>
                 <div>{{ theatrical_release }}</div>
+
+                <template v-if="with_score">
+                    <div><b>{{ $t('rating_title') }}</b></div>
+                    <div>{{ $t('mal_score_title') }} : {{ `${mal_score} / 10 (${mal_number_of_rates} ${$t('mal_rating_title')})` }}</div>
+                    <div>{{ $t('personal_score_title') }} : {{ `${personal_score} / 10` }}</div>
+                </template>
+
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-defineProps(['name', 'image', 'studios', 'genres', 'duration', 'theatrical_release'])
+defineProps([
+    'name',
+    'image',
+    'studios',
+    'genres',
+    'duration',
+    'theatrical_release',
+    'with_score',
+    'mal_score',
+    'mal_number_of_rates',
+    'personal_score'
+])
 </script>

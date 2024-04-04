@@ -1,5 +1,10 @@
 {
     "pageSubtitle": "Blog dành riêng cho sở thích Anime",
+    "winter": "Mùa Đông",
+    "spring": "Mùa Xuân",
+    "summer": "Mùa Hè",
+    "fall": "Mùa Thu",
+    "autumn": "Mùa Thu",
 
     "search": "Tìm kiếm",
     "allPostsWithSearchTerm": "Tất cả bài viết với tiêu đề có chứa:",
@@ -22,5 +27,10 @@
     "theatricalReleaseDate": "Ngày ra rạp",
     "composedBy": "Sáng tác",
     "singer": "Giọng ca",
-    "anime": "Anime"
+    "anime": "Anime",
+    "rating_title": "Điểm số",
+    "mal_score_title": "Điểm MyAnimeList",
+    "mal_rating_title": "đánh giá",
+    "personal_score_title": "Điểm cá nhân",
+    "personal_aots": "Tác phẩm yêu thích nhất - {season_name_key} {season_year}"
 }
