@@ -2,15 +2,18 @@
     <!-- Header -->
     <header id="header">
         <h1>
-            <NuxtLink to="/">Hikari's AniBlog</NuxtLink>
+            <NuxtLink to="/" external>Hikari's AniBlog</NuxtLink>
         </h1>
         <nav class="links">
             <ul>
-                <li><a href="#">Lorem</a></li>
+                <!-- <li><a href="#">Lorem</a></li>
                 <li><a href="#">Ipsum</a></li>
                 <li><a href="#">Feugiat</a></li>
                 <li><a href="#">Tempus</a></li>
-                <li><a href="#">Adipiscing</a></li>
+                <li><a href="#">Adipiscing</a></li> -->
+                <li>
+                    <NuxtLink to="/tags/2024/page/1" external>2024</NuxtLink>
+                </li>
             </ul>
         </nav>
         <nav class="main">
@@ -58,11 +61,10 @@ const switchLanguage = () => {
     const switchToLang = locale.value === 'vi' ? 'en' : 'vi'
     setLocale(switchToLang)
     if (route.name !== "slug") {
-        reloadNuxtApp({force: true})
+        location.reload()
     } else {
         navigateToOtherLanguagePost()
     }
-    // reloadNuxtApp({force: true})
 }
 
 </script>
