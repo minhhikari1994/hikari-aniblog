@@ -1,5 +1,5 @@
 <template>
-    <div class="box m-auto w-9 my-3">
+    <div class="box m-auto xl:w-9 w-12 my-3">
         <div class="grid">
             <div class="col-12 lg:col-4 ">
                 <img class="w-full" :src="image" :alt="name" />
