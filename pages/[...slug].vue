@@ -27,6 +27,6 @@ definePageMeta({
 })
 const route = useRoute();
 const { locale } = useI18n();
-const { data : currentPage } = await useAsyncData('post', () => queryContent(route.fullPath).findOne())
+const { data : currentPage } = await useAsyncData('post', () => queryContent(route.path).findOne())
 const postId = currentPage.value.id
 </script>
