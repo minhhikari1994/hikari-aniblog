@@ -12,7 +12,7 @@
         <section class="blurb" id="mal-profile">
             <h2>MyAnimeList Profile</h2>
             <NuxtLink to="https://myanimelist.net/profile/minhhikari1994">
-                <img class="w-full" src="/images/pic02.jpg" alt="" />
+                <img class="w-full" src="https://malsignature.com/?/view?username=minhhikari1994&style=normal" alt="" />
             </NuxtLink>
         </section>
 
