@@ -10,7 +10,6 @@ jobs:
   build-n-push:
     runs-on: ubuntu-latest
     environment: production
-    
     strategy:
       matrix:
         node-version: [20.x]
@@ -32,7 +31,7 @@ jobs:
     - run: pnpm install
     - run: pnpm run build
       env:
-         NUXT_PUBLIC_STUDIO_TOKENS: $NUXT_PUBLIC_STUDIO_TOKENS
+         NUXT_PUBLIC_STUDIO_TOKENS: ${{ vars.NUXT_PUBLIC_STUDIO_TOKENS }}
     - name: Build the Docker image
       run: docker build -t minhhikari/hikari-aniblog:latest .
     - name: Push the "latest" image
