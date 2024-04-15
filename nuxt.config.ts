@@ -3,7 +3,7 @@ import {resolve} from 'path'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/i18n'],
+  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/i18n', '@nuxthq/studio'],
   css: [
     'primeflex/primeflex.css',
     '~/assets/css/main.css',
