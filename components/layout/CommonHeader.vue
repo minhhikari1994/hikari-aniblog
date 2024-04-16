@@ -59,7 +59,12 @@ const switchLanguage = () => {
     const switchToLang = locale.value === 'vi' ? 'en' : 'vi'
     setLocale(switchToLang)
     if (route.name !== "slug") {
-        reloadNuxtApp({force: true})
+        navigateTo({
+            path: route.path,
+            query: {
+                lang: switchToLang
+            }
+        }, { external: true })
     } else {
         navigateToOtherLanguagePost()
     }
