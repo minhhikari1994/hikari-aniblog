@@ -27,12 +27,12 @@ export default defineNuxtConfig({
       content: {
         driver: 'fs',
         prefix: '/en',
-        base: resolve(__dirname, 'content')
+        base: resolve(__dirname, 'content-en')
       },
       vi: {
         prefix: '/vi',
         driver: 'fs',
-        base: resolve(__dirname, 'content-vi')
+        base: resolve(__dirname, 'content')
       }
     }
   }

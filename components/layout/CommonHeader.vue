@@ -52,16 +52,14 @@ const navigateToOtherLanguagePost = async() => {
         .where({ id: { $eq: postId } })
         .findOne()
     )
-    console.log(destinationPage)
     navigateTo(destinationPage.value._path)
 }
 
 const switchLanguage = () => {
-    console.log('this is the current route', route)
     const switchToLang = locale.value === 'vi' ? 'en' : 'vi'
     setLocale(switchToLang)
     if (route.name !== "slug") {
-        location.reload()
+        reloadNuxtApp({force: true})
     } else {
         navigateToOtherLanguagePost()
     }
