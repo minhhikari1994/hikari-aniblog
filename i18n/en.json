@@ -13,6 +13,7 @@
     "previousPage": "Previous page",
     "nextPage": "Next page",
     "animeWatchSchedule": "Anime watch schedule",
+
     "monday": "Monday",
     "tuesday": "Tuesday",
     "wednesday": "Wednesday",
@@ -20,6 +21,10 @@
     "friday": "Friday",
     "saturday": "Saturday",
     "sunday": "Sunday",
+    "plannedToWatch": "Planned",
+    "watching": "Watching",
+    "finished": "Finished",
+    "dropped": "Dropped",
     
     "studios": "Studios",
     "genres": "Genres",

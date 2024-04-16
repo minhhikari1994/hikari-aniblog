@@ -12,6 +12,7 @@
     "continueReading": "Đọc tiếp",
     "previousPage": "Trang trước",
     "nextPage": "Trang sau",
+
     "animeWatchSchedule": "Lịch theo dõi Anime",
     "monday": "Thứ hai",
     "tuesday": "Thứ ba",
@@ -20,6 +21,10 @@
     "friday": "Thứ sáu",
     "saturday": "Thứ bảy",
     "sunday": "Chúa Nhật",
+    "plannedToWatch": "Sắp xem",
+    "watching": "Đang xem",
+    "finished": "Hoàn thành",
+    "dropped": "Bỏ dở",
 
     "studios": "Xưởng phim",
     "genres": "Thể loại",
