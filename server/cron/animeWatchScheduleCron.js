@@ -30,7 +30,6 @@ const populateAnimeListForWeekDay = (weekDayKey, animeIDs) => {
 const populateDailyAnimeSchedule = () => {
     const result = []
     for (const [dayKey, animeIDs] of Object.entries(dailyAnimeIDs)) {
-        console.log(dayKey, animeIDs)
         result.push(populateAnimeListForWeekDay(dayKey, animeIDs))
     }
 
@@ -38,6 +37,6 @@ const populateDailyAnimeSchedule = () => {
 }
 
 export default defineCronHandler('daily', () => {
-    // const result = populateDailyAnimeSchedule()
-    // fs.writeFile('./server/cron/dailyAnimeSchedule.json', JSON.stringify(result), (err) => {})
+    const result = populateDailyAnimeSchedule()
+    fs.writeFileSync('./public/dailyAnimeSchedule.json', JSON.stringify(result), 'utf-8')
 }, { runOnInit: true })
