@@ -3,11 +3,11 @@ import {resolve} from 'path'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/i18n', '@nuxthq/studio', 'nuxt-cron'],
+  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/i18n', '@nuxthq/studio', 'nuxt-cron', 'nuxt-simple-robots', '@nuxtjs/sitemap'],
   css: [
-    '~/assets/css/main.css',
     'primeflex/primeflex.css',
-    'primeflex/themes/primeone-light.css'
+    'primeflex/themes/primeone-light.css',
+    '~/assets/css/main.css'
   ],
   app: {
     head: {
@@ -21,9 +21,11 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
-    vueI18n: './i18n/i18n.config.ts'
+    vueI18n: './i18n/i18n.config.ts',
+    locales: ['vi', 'en']
   },
   content: {
+    documentDriven: true,
     sources: {
       content: {
         driver: 'fs',
