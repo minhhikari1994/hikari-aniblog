@@ -33,7 +33,8 @@
 </template>
 
 <script setup>
-const { data: animeSchedule} = await useFetch('/dailyAnimeSchedule.json', { server: false, cache: 'no-cache' })
+const currentUnixTime = Date.now()
+const { data: animeSchedule} = await useFetch(`/dailyAnimeSchedule.json?time=${currentUnixTime}`, { server: false })
 </script>
 
 <style lang="scss" scoped>
