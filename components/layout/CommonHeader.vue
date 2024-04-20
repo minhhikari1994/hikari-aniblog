@@ -46,7 +46,7 @@ const triggerSearch = () => {
 }
 
 const navigateToOtherLanguagePost = async() => {
-    const { data : currentPage } = await useAsyncData('post', () => queryContent(route.fullPath).findOne())
+    const { data : currentPage } = await useAsyncData('post', () => queryContent(route.path).findOne())
     const postId = currentPage.value.id
     const { data : destinationPage } = await useAsyncData('post-in-other-language', () => queryContent(`/${locale.value}`)
         .where({ id: { $eq: postId } })
@@ -58,15 +58,12 @@ const navigateToOtherLanguagePost = async() => {
 const switchLanguage = () => {
     const switchToLang = locale.value === 'vi' ? 'en' : 'vi'
     setLocale(switchToLang)
-    if (route.name !== "slug") {
+    if (['slug___en', 'slug___vi'].includes(route.name)) {
+        navigateToOtherLanguagePost()
+    } else {
         navigateTo({
             path: route.path,
-            query: {
-                lang: switchToLang
-            }
-        }, { external: true })
-    } else {
-        navigateToOtherLanguagePost()
+        })
     }
 }
 
