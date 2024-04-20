@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-const { data: animeSchedule} = await useFetch('/dailyAnimeSchedule.json', { server: false })
+const { data: animeSchedule} = await useFetch('/dailyAnimeSchedule.json', { server: false, cache: 'no-cache' })
 </script>
 
 <style lang="scss" scoped>
