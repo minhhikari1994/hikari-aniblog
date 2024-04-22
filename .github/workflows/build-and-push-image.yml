@@ -41,6 +41,8 @@ jobs:
   trigger-deployment:
     runs-on: ubuntu-latest
     environment: production
+    needs: build-n-push
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/workflows/deploy-on-prod.yml
   
