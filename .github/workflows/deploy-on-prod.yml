@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - uses: actions/checkout@v4
     - name: Deploying to PROD server
       uses: appleboy/ssh-action@master
       with:
