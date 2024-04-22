@@ -41,4 +41,5 @@ jobs:
   trigger-deployment:
     needs: build-n-push
     uses: ./.github/workflows/deploy-on-prod.yml
+    secrets: inherit
   
