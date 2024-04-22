@@ -37,3 +37,10 @@ jobs:
       run: docker build -t minhhikari/hikari-aniblog:latest .
     - name: Push the "latest" image
       run: docker push "minhhikari/hikari-aniblog:latest"
+
+  trigger-deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: ./.github/workflows/deploy-on-prod.yml
+  
