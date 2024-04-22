@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - name: Deploying to DEV server
+    - name: Deploying to PROD server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.PROD_SERVER_ADDR }}
