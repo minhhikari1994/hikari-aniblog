@@ -39,10 +39,6 @@ jobs:
       run: docker push "minhhikari/hikari-aniblog:latest"
 
   trigger-deployment:
-    runs-on: ubuntu-latest
-    environment: production
     needs: build-n-push
-    steps:
-      - uses: actions/checkout@v4
-      - uses: minhhikari1994/hikari-aniblog/.github/workflows/deploy-on-prod.yml@main
+    uses: ./.github/workflows/deploy-on-prod.yml
   
