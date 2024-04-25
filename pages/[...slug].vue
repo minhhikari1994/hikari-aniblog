@@ -29,4 +29,13 @@ const route = useRoute();
 const { locale } = useI18n();
 const { data: currentPage } = await useAsyncData('post', () => queryContent(route.path).findOne())
 const postId = currentPage.value.id
+
+useSeoMeta({
+  title: currentPage.value.title,
+  ogTitle: currentPage.value.title,
+  description: currentPage.value.description,
+  ogDescription: currentPage.value.description,
+  ogImage: currentPage.value.feature_image,
+  twitterCard: 'summary_large_image',
+})
 </script>
