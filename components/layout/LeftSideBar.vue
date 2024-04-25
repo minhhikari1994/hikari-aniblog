@@ -11,14 +11,14 @@
 
         <section class="blurb" id="mal-profile">
             <h2>MyAnimeList Profile</h2>
-            <NuxtLink to="https://myanimelist.net/profile/minhhikari1994">
+            <NuxtLink to="https://myanimelist.net/profile/minhhikari1994" external target="_blank">
                 <img class="w-full" src="https://malsignature.com/?/view?username=minhhikari1994&style=normal" alt="" loading="lazy"/>
             </NuxtLink>
         </section>
 
         <section class="blurb" id="hikari-melody-yt">
             <h2>Hikari Melody Youtube</h2>
-            <NuxtLink to="https://youtube.com/c/hikarimelody">
+            <NuxtLink to="https://youtube.com/c/hikarimelody" external target="_blank">
                 <img class="w-full" src="/images/pic02.jpg" alt="" loading="lazy"/>
             </NuxtLink>
         </section>
