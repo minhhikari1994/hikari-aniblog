@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap'
   ],
   css: [
-    'primeflex/primeflex.css',
+    'primeflex/primeflex.min.css',
     'primeflex/themes/primeone-light.css',
     '~/assets/css/main.css'
   ],
