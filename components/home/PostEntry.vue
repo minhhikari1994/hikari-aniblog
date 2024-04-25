@@ -9,19 +9,20 @@
             </div>
             <div class="meta">
                 <time class="published" :datetime="post.date">{{ post.published_date }}</time>
-                <NuxtLink :to="post._path" class="author"><span class="name">{{ post.author }}</span><img
-                        :src="post.authorAvatar" alt="" loading="lazy"/></NuxtLink>
+                <NuxtLink :to="post._path" class="author"><span class="name">{{ post.author }}</span>
+                    <NuxtImg format="webp" :src="post.authorAvatar" alt="" loading="lazy" />
+                </NuxtLink>
 
             </div>
         </header>
         <NuxtLink :to="post._path" class="image featured">
-            <img :src="post.feature_image" :alt="post.title" loading="lazy"/>
+            <NuxtImg format="webp" :src="post.feature_image" :alt="post.title" loading="lazy" />
         </NuxtLink>
-        
+
         <div class="mb-5">
             <ContentRendererMarkdown :value="getFirstParagraph(post)" />
         </div>
-        
+
         <footer>
             <ul class="actions">
                 <li>

@@ -13,6 +13,7 @@
     "nuxt": "^3.11.2"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.6.0",
     "@nuxthq/studio": "^1.0.13",
     "@nuxtjs/i18n": "^8.3.0",
     "@nuxtjs/sitemap": "^5.1.4",

@@ -12,11 +12,11 @@
             </div>
             <div class="meta">
               <time class="published" datetime="2015-11-01">{{ doc.published_date }}</time>
-              <a href="#" class="author"><span class="name">Minh Hikari</span><img src="/images/avatar.jpg" alt=""
+              <a href="#" class="author"><span class="name">Minh Hikari</span><NuxtImg format="webp" src="/images/avatar.jpg" alt=""
                   loading="lazy" /></a>
             </div>
           </header>
-          <span class="image featured"><img :src="doc.feature_image" alt="" loading="lazy" /></span>
+          <span class="image featured"><NuxtImg format="webp" :src="doc.feature_image" alt="" loading="lazy" /></span>
           <ContentRenderer :value="doc" />
         </article>
       </ContentDoc>
