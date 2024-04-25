@@ -1,17 +1,20 @@
 <template>
-    <div id="main">
-        <HomePostEntry v-for="post in postList" :post="post" :key="post._id" />
-        <ul class="actions pagination">
-            <li>
-                <NuxtLink :to="`page/${nextPage.toString()}`" class="button large previous"
-                    :class="{ disabled: previousPage <= 0 }">{{ $t("previousPage") }}</NuxtLink>
-            </li>
-            <li>
-                <NuxtLink :to="`page/${nextPage.toString()}`" class="button large next"
-                    :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">{{ $t("nextPage") }}</NuxtLink>
-            </li>
-        </ul>
-    </div>
+    <NuxtLayout>
+        <div id="main">
+            <HomePostEntry v-for="post in postList" :post="post" :key="post._id" />
+            <ul class="actions pagination">
+                <li>
+                    <NuxtLink :to="`page/${nextPage.toString()}`" class="button large previous"
+                        :class="{ disabled: previousPage <= 0 }">{{ $t("previousPage") }}</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink :to="`page/${nextPage.toString()}`" class="button large next"
+                        :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">{{ $t("nextPage") }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+    </NuxtLayout>
 </template>
 
 

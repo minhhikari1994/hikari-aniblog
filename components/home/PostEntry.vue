@@ -30,7 +30,7 @@
             </ul>
             <ul class="stats">
                 <li v-for="tag in post.tags" :key="tag">
-                    <NuxtLink :to="`/tags/${tag}/page/1`">{{ tag }}</NuxtLink>
+                    <NuxtLink :to="`/tags/${tag}/page/1`" external>{{ tag }}</NuxtLink>
                 </li>
             </ul>
         </footer>

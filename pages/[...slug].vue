@@ -1,32 +1,32 @@
 <template>
-  <div id="main">
-    <ContentDoc v-slot="{ doc }">
-      <article class="post">
-        <header>
-          <div class="title">
-            <h2><a href="#">
-                {{ doc.title }}
-              </a></h2>
-            <p>{{ doc.description }}</p>
-          </div>
-          <div class="meta">
-            <time class="published" datetime="2015-11-01">{{ doc.published_date }}</time>
-            <a href="#" class="author"><span class="name">Minh Hikari</span><img src="/images/avatar.jpg" alt="" loading="lazy"/></a>
-          </div>
-        </header>
-        <span class="image featured"><img :src="doc.feature_image" alt="" loading="lazy"/></span>
-        <ContentRenderer :value="doc" />
-      </article>
-    </ContentDoc>
-  </div>
+  <NuxtLayout name="singlepost">
+    <div id="main">
+      <ContentDoc v-slot="{ doc }">
+        <article class="post">
+          <header>
+            <div class="title">
+              <h2><a href="#">
+                  {{ doc.title }}
+                </a></h2>
+              <p>{{ doc.description }}</p>
+            </div>
+            <div class="meta">
+              <time class="published" datetime="2015-11-01">{{ doc.published_date }}</time>
+              <a href="#" class="author"><span class="name">Minh Hikari</span><img src="/images/avatar.jpg" alt=""
+                  loading="lazy" /></a>
+            </div>
+          </header>
+          <span class="image featured"><img :src="doc.feature_image" alt="" loading="lazy" /></span>
+          <ContentRenderer :value="doc" />
+        </article>
+      </ContentDoc>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
-definePageMeta({
-  layout: 'singlepost'
-})
 const route = useRoute();
 const { locale } = useI18n();
-const { data : currentPage } = await useAsyncData('post', () => queryContent(route.path).findOne())
+const { data: currentPage } = await useAsyncData('post', () => queryContent(route.path).findOne())
 const postId = currentPage.value.id
 </script>

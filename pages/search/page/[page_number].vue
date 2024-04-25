@@ -1,18 +1,21 @@
 <template>
-    <div id="main">
-        <h2>{{ $t('allPostsWithSearchTerm') }} {{ searchTerm }}</h2>
-        <HomePostEntry v-for="post in postList" :post="post" :key="post.id" />
-        <ul class="actions pagination">
-            <li>
-                <NuxtLink :to="populatePagePath(previousPage)" class="button large previous"
-                    :class="{ disabled: previousPage <= 0 }">{{ $t("previousPage") }}</NuxtLink>
-            </li>
-            <li>
-                <NuxtLink :to="populatePagePath(nextPage)" class="button large next"
-                    :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">{{ $t("nextPage") }}</NuxtLink>
-            </li>
-        </ul>
-    </div>
+    <NuxtLayout>
+        <div id="main">
+            <h2>{{ $t('allPostsWithSearchTerm') }} {{ searchTerm }}</h2>
+            <HomePostEntry v-for="post in postList" :post="post" :key="post.id" />
+            <ul class="actions pagination">
+                <li>
+                    <NuxtLink :to="populatePagePath(previousPage)" class="button large previous"
+                        :class="{ disabled: previousPage <= 0 }">{{ $t("previousPage") }}</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink :to="populatePagePath(nextPage)" class="button large next"
+                        :class="{ disabled: currentPage * pageSize >= totalNumberOfPosts }">{{ $t("nextPage") }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+    </NuxtLayout>
 </template>
 
 
@@ -25,7 +28,7 @@ const nextPage = currentPage + 1
 const previousPage = currentPage - 1
 const pageSize = 2
 
-const { data: totalNumberOfPosts } = await useAsyncData('search_count', () => 
+const { data: totalNumberOfPosts } = await useAsyncData('search_count', () =>
     queryContent(`/${locale.value}`).where({ title: { $regex: `/.*${searchTerm}.*/i` } }).count()
 )
 
