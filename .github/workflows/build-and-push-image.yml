@@ -28,11 +28,15 @@ jobs:
       with:
         node-version: '20'
         cache: 'pnpm'
-    - run: pnpm install
-    - run: pnpm run build
+    - name: Install depedencies
+      run: pnpm install
+    - name: Building deploy bundle
+      run: pnpm run build
       env:
          NUXT_PUBLIC_STUDIO_TOKENS: ${{ vars.NUXT_PUBLIC_STUDIO_TOKENS }}
          NUXT_PUBLIC_SITE_URL: ${{ vars.NUXT_PUBLIC_SITE_URL }}
+    - name: Installing sharp arm binary for production
+      run: cd .output/server && npm install --cpu=arm64 --os=linux --libc=musl sharp
     - name: Build the Docker image
       run: docker build -t minhhikari/hikari-aniblog:latest .
     - name: Push the "latest" image
