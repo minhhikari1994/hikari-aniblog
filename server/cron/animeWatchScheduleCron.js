@@ -1,4 +1,3 @@
-import fs from 'fs'
 import { defineCronHandler } from '#nuxt/cron'
 import dailyAnimeIDs from './dailyAnimeIDs.json'
 
@@ -62,5 +61,5 @@ const populateDailyAnimeSchedule = async () => {
 export default defineCronHandler('daily', async () => {
     console.log('Populating daily anime schedule..,', new Date().toLocaleString())
     const result = await populateDailyAnimeSchedule()
-    fs.writeFileSync('./public/dailyAnimeSchedule.json', JSON.stringify(result), 'utf-8')
+    await useStorage().setItem('dailyAnimeSchedule', result)
 }, { runOnInit: true, timeZone: 'UTC+7' })
