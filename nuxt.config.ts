@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     'primeflex/themes/primeone-light.css',
     '~/assets/css/main.css'
   ],
+  routeRules: {
+    "/": { prerender: false },
+  },
   app: {
     head: {
       script: [
