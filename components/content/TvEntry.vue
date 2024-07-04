@@ -1,7 +1,7 @@
 <template>
     <div class="box m-auto xl:w-9 w-12 my-3">
         <div class="grid">
-            <div class="col-12 lg:col-4">
+            <div class="col-12 lg:col-4 text-center">
                 <NuxtImg fit="contain" format="webp" class="lg:w-full w-8 m-auto" :src="image" :alt="name" loading="lazy"/>
             </div>
             <div class="col-12 lg:col-8 text-center m-auto px-3">
